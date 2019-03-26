@@ -1,0 +1,12 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\loginwindow.o
+./debug\user.o
+./debug\admin.o
+./debug\student.o
+./debug\professor.o
+./debug\userbase.o
+./debug\moc_mainwindow.o
+./debug\moc_loginwindow.o
+);
