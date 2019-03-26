@@ -1,0 +1,5 @@
+Nazwa: users
+U¿ytkownik: users
+Has³o: users
+
+Struktury tabeli generowane s¹ z poziomu kodu programu.

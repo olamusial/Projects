@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <context-param>
+        <param-name>JdbcDriver</param-name>
+        <param-value>org.apache.derby.jdbc.ClientDriver</param-value>
+    </context-param>
+    <context-param>
+        <param-name>DatabaseName</param-name>
+        <param-value>jdbc:derby://localhost:1527/users</param-value>
+    </context-param>
+    <context-param>
+        <param-name>DatabaseUserName</param-name>
+        <param-value>users</param-value>
+    </context-param>
+    <context-param>
+        <param-name>DatabaseUserPassword</param-name>
+        <param-value>users</param-value>
+    </context-param>
+</web-app>

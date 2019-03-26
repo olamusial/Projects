@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-family: Helvetica, Sans-Serif;
+            }
+            img {
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                opacity: 0.6;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="icon2.png" width="150" height="150" alt="organizer icon" >
+        <h2 align="center">ORGANIZER</h2>
+        <h2 align="center">Log in</h2>
+        <h5 align="center">..or create new account</h5>
+        <form action="Login" method="POST">
+            <p align="center">User: <input type="text" name=user placeholder="nick"/></p>
+            <p align="center">Password: <input type="password" name=password placeholder="password"/></p>
+            <p align="center"><input type="submit" name=login id="login" value="Log In" /></p>    
+        </form>
+        <form action="Registration" method="POST">  
+            <p align="center" ><input type="submit" name=signin id="signin" value="Sign In" /></p> 
+        </form>             
+    </body>
+</html>
