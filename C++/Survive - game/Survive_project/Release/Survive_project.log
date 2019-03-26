@@ -1,0 +1,36 @@
+﻿  stdafx.cpp
+  Bonus.cpp
+d:\windows\documents\#ola\studia_inf\pk (c++) 3 i 4\survive_project 5.06\survive_project 5.06\survive_project\Bonus.h(2): fatal error C1083: Cannot open include file: 'SFML\Graphics.hpp': No such file or directory
+  BonusFactory.cpp
+d:\windows\documents\#ola\studia_inf\pk (c++) 3 i 4\survive_project 5.06\survive_project 5.06\survive_project\Bonus.h(2): fatal error C1083: Cannot open include file: 'SFML\Graphics.hpp': No such file or directory
+  Bullet.cpp
+d:\windows\documents\#ola\studia_inf\pk (c++) 3 i 4\survive_project 5.06\survive_project 5.06\survive_project\Bullet.h(2): fatal error C1083: Cannot open include file: 'SFML\Graphics.hpp': No such file or directory
+  Enemy.cpp
+d:\windows\documents\#ola\studia_inf\pk (c++) 3 i 4\survive_project 5.06\survive_project 5.06\survive_project\Enemy.h(2): fatal error C1083: Cannot open include file: 'SFML\Graphics.hpp': No such file or directory
+  EnemyFactory.cpp
+d:\windows\documents\#ola\studia_inf\pk (c++) 3 i 4\survive_project 5.06\survive_project 5.06\survive_project\Enemy.h(2): fatal error C1083: Cannot open include file: 'SFML\Graphics.hpp': No such file or directory
+  Game.cpp
+d:\windows\documents\#ola\studia_inf\pk (c++) 3 i 4\survive_project 5.06\survive_project 5.06\survive_project\Game.h(4): fatal error C1083: Cannot open include file: 'SFML\Graphics.hpp': No such file or directory
+  GameOverState.cpp
+d:\windows\documents\#ola\studia_inf\pk (c++) 3 i 4\survive_project 5.06\survive_project 5.06\survive_project\Game.h(4): fatal error C1083: Cannot open include file: 'SFML\Graphics.hpp': No such file or directory
+  GameState.cpp
+d:\windows\documents\#ola\studia_inf\pk (c++) 3 i 4\survive_project 5.06\survive_project 5.06\survive_project\Game.h(4): fatal error C1083: Cannot open include file: 'SFML\Graphics.hpp': No such file or directory
+  Health.cpp
+d:\windows\documents\#ola\studia_inf\pk (c++) 3 i 4\survive_project 5.06\survive_project 5.06\survive_project\Health.h(2): fatal error C1083: Cannot open include file: 'SFML\Graphics.hpp': No such file or directory
+  HelpState.cpp
+d:\windows\documents\#ola\studia_inf\pk (c++) 3 i 4\survive_project 5.06\survive_project 5.06\survive_project\Game.h(4): fatal error C1083: Cannot open include file: 'SFML\Graphics.hpp': No such file or directory
+  InputManager.cpp
+d:\windows\documents\#ola\studia_inf\pk (c++) 3 i 4\survive_project 5.06\survive_project 5.06\survive_project\InputManager.h(3): fatal error C1083: Cannot open include file: 'SFML\Graphics.hpp': No such file or directory
+  MenuState.cpp
+d:\windows\documents\#ola\studia_inf\pk (c++) 3 i 4\survive_project 5.06\survive_project 5.06\survive_project\Game.h(4): fatal error C1083: Cannot open include file: 'SFML\Graphics.hpp': No such file or directory
+  Score.cpp
+d:\windows\documents\#ola\studia_inf\pk (c++) 3 i 4\survive_project 5.06\survive_project 5.06\survive_project\Score.h(3): fatal error C1083: Cannot open include file: 'SFML\Graphics.hpp': No such file or directory
+  Sea.cpp
+d:\windows\documents\#ola\studia_inf\pk (c++) 3 i 4\survive_project 5.06\survive_project 5.06\survive_project\Sea.h(2): fatal error C1083: Cannot open include file: 'SFML\Graphics.hpp': No such file or directory
+  Ship.cpp
+d:\windows\documents\#ola\studia_inf\pk (c++) 3 i 4\survive_project 5.06\survive_project 5.06\survive_project\Ship.h(2): fatal error C1083: Cannot open include file: 'SFML\Graphics.hpp': No such file or directory
+  StateMachine.cpp
+  Survive_project.cpp
+d:\windows\documents\#ola\studia_inf\pk (c++) 3 i 4\survive_project 5.06\survive_project 5.06\survive_project\Game.h(4): fatal error C1083: Cannot open include file: 'SFML\Graphics.hpp': No such file or directory
+  TextureManager.cpp
+d:\windows\documents\#ola\studia_inf\pk (c++) 3 i 4\survive_project 5.06\survive_project 5.06\survive_project\TextureManager.h(3): fatal error C1083: Cannot open include file: 'SFML\Graphics.hpp': No such file or directory
