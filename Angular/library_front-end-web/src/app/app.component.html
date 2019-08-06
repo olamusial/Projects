@@ -1,0 +1,68 @@
+<!--Main page of the app-->
+
+<img *ngIf="this.router.url === '/' || this.router.url === '/login' ||
+  this.router.url === '/register'" class="background">
+
+<div *ngIf="showBar" style="text-align:center">
+  <nav class="navbar navbar-expand-md navbar-dark" id="navBar">
+    <a class="navbar-brand" id="logo" routerLink="/"><h3><b>Librex.</b></h3></a>
+    <button #navbarToggler class="navbar-toggler" type="button"
+      data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" (click)="isShown= !isShown"
+      [attr.aria-expanded]="isShown" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" [ngClass]="{ 'show': isShown }"
+      id="navbarSupportedContent">
+      <ul class="navbar-nav d-flex">
+        <li class="nav-item">
+          <a class="nav-link" (click)="isShown= false" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="isShown= false"
+            routerLink="/browsebooks">Browse books</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="this.authService.isLoggedIn()" class="nav-link"
+            (click)="isShown= false" routerLink="/mybooks">My books</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="this.authService.isLoggedIn()" class="nav-link"
+            (click)="isShown= false" routerLink="/messages">Messages</a>
+        </li>
+        <li class="nav-item nav-item-right color-yellow">
+          <a *ngIf="this.authService.isLoggedIn()" class="nav-link"
+            (click)="isShown= false" routerLink="/userpanel">My Account</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="!this.authService.isLoggedIn()" class="nav-link"
+            (click)="isShown= false" routerLink="/login"><b>Log in</b></a>
+          <a *ngIf="this.authService.isLoggedIn()" class="nav-link"
+            (click)="isShown= false; logout()" routerLink="/"><b>Log out</b></a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <div *ngIf="showLoginButton && !this.authService.isLoggedIn()">
+    <h2 id="welcome-header"><b>Welcome to Librex.!</b></h2>
+    <a routerLink="/login" routerLinkActive="active" class="loginButton"><b>Enter</b></a>
+  </div></div>
+
+<div *ngIf="showLoginButton && this.authService.isLoggedIn()" class="notifications-container">
+    <h2 id="welcome-header"><b>Welcome to Librex.!</b></h2>
+  <div class="notifications-window">
+  <h3 id="notif-header">Your recent notifications:</h3>
+  <div *ngFor="let notif of this.notifications" class="notification-body">
+    <p class="notification-date">{{notif.expirationDate | date}}</p>
+    <p class="notification-text">{{notif.text}}</p>
+  </div>
+  <div *ngIf="this.notifications.length == 0" class="notification-body">
+      <p class="notification-text">You don't have any notifications.</p>
+  </div>
+</div></div>
+
+<app-alert></app-alert>
+<router-outlet class="routerOutlet" ></router-outlet>

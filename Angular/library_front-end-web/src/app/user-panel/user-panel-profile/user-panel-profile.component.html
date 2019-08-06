@@ -1,0 +1,18 @@
+<div class="flex-container">
+
+  <div class="user-data">
+    <h2>Personal details</h2>
+    <ul>
+      <li>Name: <span class="data">{{currentUser?.name}}</span></li>
+      <li>Surname: <span class="data">{{currentUser?.surname}}</span></li>
+      <li>Login: <span class="data">{{currentUser?.login}}</span></li>
+      <li *ngIf="currentUser?.city">City: <span class="data">{{currentUser?.city}}</span></li>    <!-- Do usuniecia *ngIf w przyszlosci bo pole obowiazkowe -->
+      <li>Street: <span class="data">{{currentUser?.street}}</span></li>
+      <li>House number: <span class="data">{{currentUser?.houseNumber}}</span></li>
+      <li>Email: <span class="data">{{currentUser?.email}}</span></li>
+      <li *ngIf="currentUser?.dateOfBirth">Date of birth: <span class="data">{{currentUser?.dateOfBirth.substring(0,10)}}</span></li>
+      <li *ngIf="currentUser?.PersonalIdentityNumber">Personal identity number: <span class="data">{{currentUser?.PersonalIdentityNumber}}</span></li>
+    </ul>
+  </div>
+
+</div>

@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+body{
+    --theme-color-yellow: #FFE303;
+    --theme-color-gray: #333333;
+    --theme-color-black: #222222;
+    --theme-color-lightgray1: #eeeeee;
+    --theme-color-lightgray2: #aaaaaa;
+    }

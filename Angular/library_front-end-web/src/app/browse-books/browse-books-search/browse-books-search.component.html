@@ -1,0 +1,31 @@
+<h1>Search</h1>
+<p>Use fields below to find the book you are looking for.</p>
+
+<form [formGroup]="searchForm" (ngSubmit)="applySearch()">
+  <h5 class="sectionLabel">Title</h5>
+  <input (click)="setSearch()" formControlName="title" placeholder=" ---" class="inputElementLeftBar
+    whiteSearchBar">
+
+  <h5 class="sectionLabel">Author</h5>
+  <input (click)="setSearch()" formControlName="authorName" placeholder=" Name" class="inputElementLeftBarSmall
+    whiteSearchBar">
+  <input (click)="setSearch()" formControlName="authorSurname" placeholder=" Surname" class="inputElementLeftBarSmall
+    whiteSearchBar">
+
+
+  <h5 class="sectionLabel">Publisher</h5>
+  <input (click)="setSearch()" formControlName="publisher" placeholder=" ---" class="inputElementLeftBar
+    whiteSearchBar">
+
+  <h5 class="sectionLabel">ISBN</h5>
+  <input (click)="setSearch()" formControlName="isbn" placeholder=" ---" class="inputElementLeftBar
+    whiteSearchBar">
+
+  <h5 class="sectionLabel">Genres</h5>
+  <input (click)="setSearch()" formControlName="genres" placeholder=" ---" class="inputElementLeftBar
+    whiteSearchBar">
+
+  <br>
+  <button *ngIf="!this.searchInProgress" class="btn btn-dark" >browse all books</button>
+  <button *ngIf="this.searchInProgress" class="btn btn-dark" >search</button>
+</form>

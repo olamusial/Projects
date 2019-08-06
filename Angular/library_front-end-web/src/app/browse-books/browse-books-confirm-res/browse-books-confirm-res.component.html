@@ -1,0 +1,21 @@
+<div class="window">
+  <h4>Confirm your reservation</h4>
+  <div class = "flex-box">
+    <div>
+  <ul>
+    <li>Title: <b>{{book.title}}</b></li>
+    <li>Author: <b>{{book.author}}</b></li>
+    <li><br></li>
+    <li>Publisher: <b>{{book.publisher}}</b></li>
+    <li>ISBN: <b>{{book.isbn}}</b></li>
+    <li>Release: <b>{{book.releaseDate | date}}</b></li>
+  </ul>
+</div>
+  <img class="book-cover" src="{{book.externaPhotoUrl}}">
+</div>
+<div class = "flex-box-buttons">
+    <button class="btn btn-dark" id="submitButton" (click)="clickConfirmButton()">Confirm</button>
+    <button class="btn btn-dark" id="cancelButton" (click)="clickCancelButton()">Cancel</button>
+  </div>
+  
+</div>

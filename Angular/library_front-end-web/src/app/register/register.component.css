@@ -1,0 +1,44 @@
+.form-group {
+    padding: 10px;
+}
+
+.window {
+    width: 600px;
+    max-width: 100%;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.column {
+    flex: 0.6;
+}
+
+.mat-form-field {
+    margin-bottom: -20px;
+    margin-top: -20px;
+}
+
+::ng-deep .mat-form-field-underline {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .window {
+        -webkit-animation-name: unset;
+        animation-name: unset;
+        width: auto;
+        max-width: calc(100% - 20px);
+        left: 10px;
+        top: 10px;
+        transform: unset;
+        position: relative;
+        margin-bottom: 10px;
+    }
+    .column {
+        flex: unset;
+    }
+}

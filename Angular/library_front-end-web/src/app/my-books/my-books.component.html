@@ -1,0 +1,145 @@
+<div class="contentFlexContainer">
+
+  <div class="leftBar">
+    <h1 class="viewLabel"><b>My books</b></h1>
+    <div class="sticky-container">
+
+      <div class="sectionLabel">Actions</div>
+      <div class="sectionBorder">
+
+        <ng-container *ngIf="this.selectedTableName == undefined">
+          <button disabled class="btn btn-dark orderButton" id="submitButton">
+            Select a book</button>
+        </ng-container>
+
+        <ng-container *ngIf="this.selectedTableName == 'holds'">
+          <button class="btn btn-dark orderButton" id="submitButton"
+            (click)="removeHold(this.selectedTableRow)">Remove hold</button>
+        </ng-container>
+
+        <ng-container *ngIf="this.selectedTableName == 'orders'">
+          <button class="btn btn-dark orderButton" id="submitButton"
+            (click)="prolongate(this.selectedTableRow)">Prolongate</button>
+        </ng-container>
+
+        <ng-container *ngIf="this.selectedTableName == 'pastOrders'">
+          <button class="btn btn-dark orderButton" id="submitButton"
+            (click)="payPenalty(this.selectedTableRow)">Pay penalty</button>
+        </ng-container>
+
+      </div>
+    </div>
+  </div>
+
+  <app-my-books-payment *ngIf="showPayment"
+  [penaltyID]="penaltyId"
+  (confirmationSignal)="updateConfirmationSignal($event)"
+  [class.animate-end]="closeWindow"></app-my-books-payment>
+
+
+  <div class="table-flex-container">
+
+    <div class="horizontal-scroll">
+      <h4>Your holds</h4>
+      <table class="table table-light">
+        <thead>
+          <tr>
+            <ng-container *ngFor="let key of this.tables[0].tableColumnsKeys">
+              <th *ngIf="this.tables[0].tableColumns.get(key)">{{key}}</th>
+            </ng-container>
+          </tr>
+        </thead>
+        <tbody class="fadeIn">
+          <tr *ngFor="let i= index; let book of this.tables[0].data"
+            id="entry{{i}}"
+            (mouseenter)="hoveredTableRow= i; highlightTableEntry(1);
+            this.tables[0].isSelected= true"
+            (mouseleave)="highlightTableEntry(0); this.tables[0].isSelected=
+            false" (click)="hoveredTableRow= i;
+            selectTableEntry()" #holdsTableEntry>
+            <td *ngIf="this.tables[0].tableColumns.get('Title')">{{book.bookName}}</td>
+            <td *ngIf="this.tables[0].tableColumns.get('Hold Id')">{{book.id}}</td>
+            <td *ngIf="this.tables[0].tableColumns.get('Place in queue')">
+              <div *ngIf="book.placeInQueue == 0" style="color: red">Ready to
+                receive</div>
+              <div *ngIf="book.placeInQueue != 0">{{book.placeInQueue}}</div></td>
+            <td *ngIf="this.tables[0].tableColumns.get('Hold date')">{{book.holdDate
+              | date}}</td>
+          </tr>
+          <tr *ngIf="this.tables[0].data.length == 0"><td>No entries in this
+              list.</td></tr>
+        </tbody>
+
+      </table>
+    </div>
+
+    <div class="horizontal-scroll">
+      <h4>Your orders</h4>
+      <table class="table table-light">
+        <thead>
+          <tr>
+            <ng-container *ngFor="let key of this.tables[1].tableColumnsKeys">
+              <th *ngIf="this.tables[1].tableColumns.get(key)">{{key}}</th>
+            </ng-container>
+          </tr>
+        </thead>
+        <tbody class="fadeIn">
+          <tr *ngFor="let i= index; let book of this.tables[1].data"
+            id="entry{{i}}"
+            (mouseenter)="hoveredTableRow= i; highlightTableEntry(1);
+            this.tables[1].isSelected= true"
+            (mouseleave)="highlightTableEntry(0); this.tables[1].isSelected=
+            false" (click)="hoveredTableRow= i;
+            selectTableEntry()" #ordersTableEntry>
+            <td *ngIf="this.tables[1].tableColumns.get('Title')">{{book.bookName}}</td>
+            <td *ngIf="this.tables[1].tableColumns.get('Id')">{{book.id}}</td>
+            <td *ngIf="this.tables[1].tableColumns.get('Date')">{{book.orderDate | date}}</td>
+            <td *ngIf="this.tables[1].tableColumns.get('Return')">{{book.orderlyReturnDate | date}}</td>
+            <td *ngIf="this.tables[1].tableColumns.get('Renewals')">
+              <div *ngIf="book.renewalCount == 0">0</div>
+              <div *ngIf="book.renewalCount != 0">{{book.renewalCount}}</div></td>
+          </tr>
+          <tr *ngIf="this.tables[1].data.length == 0"><td>No entries in this
+              list.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="horizontal-scroll">
+      <h4>Your past orders</h4>
+      <div class="vertical-scroll">
+      <table class="table table-light">
+        <thead>
+          <tr>
+            <ng-container *ngFor="let key of this.tables[2].tableColumnsKeys">
+              <th *ngIf="this.tables[2].tableColumns.get(key)">{{key}}</th>
+            </ng-container>
+          </tr>
+        </thead>
+        <tbody class="fadeIn">
+          <tr *ngFor="let i= index; let book of this.tables[2].data"
+            id="entry{{i}}"
+            (mouseenter)="hoveredTableRow= i; highlightTableEntry(1);
+            this.tables[2].isSelected= true"
+            (mouseleave)="highlightTableEntry(0); this.tables[2].isSelected=
+            false" (click)="hoveredTableRow= i;
+            selectTableEntry()" #pastOrdersTableEntry>
+            <td *ngIf="this.tables[2].tableColumns.get('Title')">{{book.bookName}}</td>
+            <td *ngIf="this.tables[2].tableColumns.get('Id')">{{book.id}}</td>
+            <td *ngIf="this.tables[2].tableColumns.get('Date')">{{book.orderDate | date}}</td>
+            <td *ngIf="this.tables[2].tableColumns.get('Checkout')">{{book.checkOutDate | date}}</td>
+            <td *ngIf="this.tables[2].tableColumns.get('Penalty')">
+              <div *ngIf="book.penalty == null">none</div>
+              <div *ngIf="book.penalty != null && book.penalty.isPaid == false" style="color: red">{{book.penalty.amount}} PLN</div>
+              <div *ngIf="book.penalty != null && book.penalty.isPaid == true && book.penalty.isConfirmed == false" style="color: blue">Waiting for confirmation ({{book.penalty.amount}} PLN)</div>
+              <div *ngIf="book.penalty != null && book.penalty.isPaid == true && book.penalty.isConfirmed == true" style="color: limegreen">Paid ({{book.penalty.amount}} PLN)</div></td>
+          </tr>
+          <tr *ngIf="this.tables[2].data.length == 0"><td>No entries in this
+              list.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+  </div>
+
+</div>

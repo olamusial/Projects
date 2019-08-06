@@ -1,0 +1,139 @@
+<app-notifications (hasNotifications)="updateHasNotifications($event)"></app-notifications>
+<div class="contentFlexContainer" [ngClass]="{'gray-on':
+hasNotifications, 'gray-off': !hasNotifications}">
+  <div class="leftBar">
+    <h1 class="viewLabel"><b>Browse books</b></h1>
+    <div class="sticky-container">
+      <ng-container *ngIf="!showSearchWindow">
+        <div class="fadeIn" id="AnimationDiv">
+
+          <div *ngIf="this.authService.getId()" class="sectionLabel">Actions</div>
+          <div *ngIf="this.authService.getId()" class="sectionBorder">
+
+            <ng-container *ngIf="!(this.selectedTableRow == undefined)">
+
+              <!--<button *ngIf="this.books[this.selectedTableRow].availableCopies>
+              '0'" class="btn btn-dark orderButton"
+              id="submitButton" (click)="clickResButton(this.selectedTableRow)">Order</button>-->
+              <button class="btn btn-dark orderButton" id="submitButton"
+                (click)="clickResButton(this.selectedTableRow)">Reserve</button>
+            </ng-container>
+
+            <ng-container *ngIf="this.selectedTableRow == undefined">
+              <button disabled class="btn btn-dark orderButton"
+                id="submitButton">
+                Select a book</button>
+            </ng-container>
+          </div>
+
+          <div class="sectionLabel">Columns</div>
+          <div class="sectionBorder">
+            <div class="form-check-container">
+              <ng-container *ngFor="let key of this.tableColumnsKeys">
+                <div class="form-check" *ngIf="key != 'Title'">
+                  <mat-checkbox class="form-check-input
+                    position-static"
+                    [ngModel]="this.tableColumns.get(key)"
+                    (ngModelChange)="toggletableColumns(key)">
+                    <label class="form-check-label">{{key}}</label>
+                  </mat-checkbox>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+
+          <div class="sectionLabel">Find</div>
+          <div class="sectionBorder">
+            <input (blur)="searchText= $event.target.value"
+              (keyup.enter)="searchText=
+              $event.target.value" (input)="checkSearchBox($event.target.value)"
+              placeholder="find on the page"
+              class="inputElementLeftBar">
+          </div>
+
+
+          <div class="sectionLabel">Sort</div>
+          <div class="sectionBorder">
+            <select (change)="sortTable($event.target.value)"
+              class="inputElementLeftBar">
+
+              <ng-container *ngFor="let key of this.sortModes">
+                <option value='{" prop" :" {{key.className}}" ," desc" :" false"
+                  }'>
+                  {{key.showName}} (Asc.)
+                </option>
+                <option value='{" prop" :" {{key.className}}" ," desc" :" true"
+                  }'>
+                  {{key.showName}} (Desc.)
+                </option>
+              </ng-container>
+
+            </select>
+          </div>
+        </div>
+      
+      <p (click)="this.hoveredTableRow= undefined; this.selectedTableRow=
+        undefined; showSearchWindow= true; selectTableEntry();"class="backIcon"><b>⯇
+          Back to search</b></p>
+    </ng-container>
+  </div>
+  </div>
+
+  <app-browse-books-confirm-res *ngIf="showConfirmResWindow"
+    [book]="books[selectedTableRow]"
+    (confirmationSignal)="updateConfirmationSignal($event)"
+    [class.animate-end]="closeWindow"></app-browse-books-confirm-res>
+
+
+  <div [hidden]="!showSearchWindow" class="welcomeWindow">
+    <app-browse-books-search (showSearchWindow)="updateShowSearchWindow($event)"
+      (filterParams)="updateFilterParams($event)"></app-browse-books-search>
+  </div>
+
+  <div [hidden]="showSearchWindow" class="horizontal-scroll">
+    <table class="table table-light" [ngClass]="{'gray-on':
+      showConfirmResWindow, 'gray-off': !showConfirmResWindow}">
+      <thead>
+        <tr>
+          <ng-container *ngFor="let key of this.tableColumnsKeys">
+            <th *ngIf="this.tableColumns.get(key)">{{key}}</th>
+          </ng-container>
+        </tr>
+      </thead>
+      <tbody class="fadeIn">
+        <tr *ngFor="let i= index; let book of this.books |
+          bookFilter:searchText:tableColumns" id="entry{{i}}"
+          (mouseenter)="hoveredTableRow= i; highlightTableEntry(1)"
+          (mouseleave)="highlightTableEntry(0)" (click)="hoveredTableRow= i;
+          selectTableEntry()" #tableEntry>
+          <td *ngIf="this.tableColumns.get('Photo')" scope="row"
+            style="width:50px;"><img
+              src="{{book.externaPhotoUrl}}"
+              class="book-photo"></td>
+          <td *ngIf="this.tableColumns.get('Title')">{{book.title}}</td>
+          <td *ngIf="this.tableColumns.get('Author')">{{book.author}}</td>
+          <td *ngIf="this.tableColumns.get('Publisher')">{{book.publisher}}</td>
+          <td *ngIf="this.tableColumns.get('Genres')">{{book.genres}}</td>
+          <td *ngIf="this.tableColumns.get('Release Date')">{{book.releaseDate |
+            date}}</td>
+          <td *ngIf="this.tableColumns.get('ISBN number')">{{book.isbn}}</td>
+          <td *ngIf="this.tableColumns.get('Available copies')"><span
+              [style.color]="book.availableCopies == '0' ? 'red' : 'black'">
+              {{book.availableCopies}}</span>
+            / {{book.totalCopies}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div *ngIf="this.totalBooksCount> this.pageSize" class="pagination
+      bg-color-gray fadeIn">
+      <mat-paginator style="width: 300px;"
+        [length]="totalBooksCount"
+        [pageSize]="pageSize"
+        [hidePageSize]="true" [pageIndex]="pageIndex"
+        showFirstLastButtons="true"
+        (page)="onPageChange($event)"
+        class="bg-color-gray"></mat-paginator>
+    </div>
+  </div>
+</div>

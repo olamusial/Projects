@@ -1,0 +1,33 @@
+.window {
+    background-color: var(--theme-color-lightgray1);
+    padding: 30px;
+    margin: 75px;
+    border-radius: 10px;
+    min-width: 400px;
+}
+
+h2 {
+    font-weight: lighter;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile: */
+    .window {
+        border-radius: 0px;
+        padding: 30px;
+        margin: 0px;
+        min-width: 0px;
+        width: 100vw;
+        height: auto;
+        background-color: transparent;
+    }
+    .flex-container {
+        padding: 0px;
+    }
+}

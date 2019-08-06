@@ -1,0 +1,18 @@
+<div class="window">
+  <h4>Pay your penalty</h4>
+  <div class="flex-box">
+    <div>
+      
+        <form [formGroup]="paymentForm">
+            <label for="title">Bank transfer title:</label>
+            <input type="text" formControlName="title" class="form-control"/>
+        </form>
+      
+      <div class="flex-box-buttons">
+        <button class="btn btn-dark" id="submitButton" (click)="clickConfirmButton()">Confirm</button>
+        <button class="btn btn-dark" id="cancelButton" (click)="clickCancelButton()">Cancel</button>
+      </div>
+
+    </div>
+  </div>
+</div>

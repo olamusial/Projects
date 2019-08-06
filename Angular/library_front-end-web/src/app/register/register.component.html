@@ -1,0 +1,166 @@
+<div class="window">
+
+  <h2>Register form</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+    <div class="row">
+
+      <div class="column column-one">
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" formControlName="name" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+          <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+            <div *ngIf="f.name.errors?.required">Name is required!</div>
+          </div>
+          <div *ngIf="!submitted || !f.name.errors" class="valid-spacer">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="surname">Surname</label>
+          <input type="text" formControlName="surname" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.surname.errors }" />
+          <div *ngIf="submitted && f.surname.errors" class="invalid-feedback">
+            <div *ngIf="f.surname.errors?.required">Surname is required!</div>
+          </div>
+          <div *ngIf="!submitted || !f.surname.errors" class="valid-spacer">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="dateOfBirth">Date of birth</label>
+          <input type="date" formControlName="dateOfBirth" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.dateOfBirth.errors }" />
+          <div *ngIf="submitted && f.dateOfBirth.errors" class="invalid-feedback">
+            <div *ngIf="f.dateOfBirth.errors?.required">Date is required!</div>
+          </div>
+          <div *ngIf="!submitted || !f.dateOfBirth.errors" class="valid-spacer">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="pesel">Pesel</label>
+          <input type="text" formControlName="pesel" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.pesel.errors }" />
+          <div *ngIf="submitted && f.pesel.errors" class="invalid-feedback">Wrong format</div>
+          <div *ngIf="!submitted || !f.pesel.errors" class="valid-spacer">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="column column-two">
+
+        <div class="form-group">
+          <label for="city">City</label>
+          <input type="text" formControlName="city"
+            class="form-control" [ngClass]="{ 'is-invalid': submitted && f.city.errors }" />
+          <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+            <div *ngIf="f.city.errors?.required">City is required!</div>
+          </div>
+          <div *ngIf="!submitted || !f.city.errors" class="valid-spacer">
+          </div>
+        </div>
+
+        <!-- <mat-form-field>
+           <label for="city">City</label>
+            <input type="text" matInput [matAutocomplete]="auto" appearance="outline" formControlName="city" class="form-control aaa"
+              (input)="doFilter()" [ngClass]="{ 'is-invalid': submitted && f.city.errors }" />
+              <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                  <div *ngIf="f.city.errors?.required">City is required!</div>
+                </div>
+                <div *ngIf="!submitted || !f.city.errors" class="valid-spacer">
+                </div>
+          </mat-form-field>
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let city of filteredCitiesDictionary" [value]="city.name">
+              {{ city.name }}
+            </mat-option>
+          </mat-autocomplete>
+        </div> -->
+
+        <div class="form-group">
+          <label for="street">Street</label>
+          <input type="text" formControlName="street" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.street.errors }" />
+          <div *ngIf="submitted && f.street.errors" class="invalid-feedback">
+            <div *ngIf="f.street.errors?.required">Street is required!</div>
+          </div>
+          <div *ngIf="!submitted || !f.street.errors" class="valid-spacer">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="number">House number</label>
+          <input type="text" formControlName="number" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.number.errors }" />
+          <div *ngIf="submitted && f.number.errors" class="invalid-feedback">
+            <div *ngIf="f.number.errors?.required">House number is required!</div>
+          </div>
+          <div *ngIf="!submitted || !f.number.errors" class="valid-spacer">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" formControlName="email" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors?.required">Email is required!</div>
+          </div>
+          <div *ngIf="!submitted || !f.email.errors" class="valid-spacer">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="column column-three">
+
+        <div class="form-group">
+          <label for="login">Login</label>
+          <input type="text" formControlName="login" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.login.errors }" />
+          <div *ngIf="submitted && f.login.errors" class="invalid-feedback">
+            <div *ngIf="f.login.errors?.required">Login is required!</div>
+          </div>
+          <div *ngIf="!submitted || !f.login.errors" class="valid-spacer">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" formControlName="password" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors?.required">Password is required!</div>
+            <div *ngIf="f.password.errors?.minlength">Password must be at least 8 characters</div>
+          </div>
+          <div *ngIf="!submitted || !f.password.errors" class="valid-spacer">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="repeatedPassword">Repeat password</label>
+          <input type="password" formControlName="repeatedPassword" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.repeatedPassword.errors }" />
+          <div *ngIf="submitted && f.repeatedPassword.errors" class="invalid-feedback">
+            <div *ngIf="f.repeatedPassword.errors?.required">Repeated password is required!</div>
+            <div *ngIf="f.repeatedPassword.errors?.minlength">Repeated password must be at least 8 characters</div>
+          </div>
+          <div *ngIf="!submitted || !f.repeatedPassword.errors" class="valid-spacer">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-dark" id="submitButton">Register</button>
+    </div>
+
+  </form>
+
+</div>

@@ -1,0 +1,11 @@
+<div *ngIf="this.notifications.length">
+  <div class="window">
+    <h2>Notification</h2>
+    <ng-container *ngFor="let notification of notifications">
+      <div class="single-notification">
+        {{notification.text}}
+      </div>
+    </ng-container>
+    <button class="btn btn-dark" id="okButton" (click)="onOkClicked()">OK</button>
+  </div>
+</div>

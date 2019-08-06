@@ -1,0 +1,30 @@
+<div class="flexbox-container">
+  <div class="messages flex-item">
+          <ng-container *ngFor="let message of messages">
+              <div class="single-message" [ngClass]="message.text.startsWith('User: ') ? 'user-message' : 'librarian-message'">
+              {{message.text}}
+              </div>
+          </ng-container>
+       
+  </div>
+  <div class="new-message flex-item">
+
+      <form [formGroup]="newMessageForm" (ngSubmit)="onSend()">
+          <div class="form-group">
+              <input type="text" placeholder="Insert your message..." formControlName="message" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.message.errors }" />
+              <div *ngIf="submitted && f.message.errors" class="invalid-feedback">
+                  <div *ngIf="f.message.errors?.maxlength">Maximum 200 characters</div>
+                  <div *ngIf="f.message.errors?.required">The message field cannot be empty</div>
+              </div>
+              <div *ngIf="!submitted || !f.message.errors" class="valid-spacer">
+                      <br>
+                  </div>
+          </div>          
+          <div class="form-group">
+              <button class="btn btn-dark" id="sendButton">Send</button> 
+          </div>
+      </form>
+
+  </div>
+</div>
+

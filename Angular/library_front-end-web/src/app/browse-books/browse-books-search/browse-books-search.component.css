@@ -1,0 +1,70 @@
+
+.viewLabel {
+    color: var(--theme-color-gray);
+    margin: 8px;
+}
+
+.btn-dark:focus {
+    box-shadow: none;
+}
+
+.btn-dark {
+    margin: 16px;
+    margin-left: 8px;
+    min-width: 150px;
+}
+
+.sectionLabel {
+    color: var(--theme-color-lightgray2);
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-bottom: 3px;
+    margin-top: 16px;
+}
+
+.sectionBorder {
+    border-top: 2px solid var(--theme-color-lightgray2);
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.inputElementLeftBar {
+    margin: 8px;
+    width: calc(100% - 16px);
+    max-width: 300px;
+    border-radius: 4px;
+    border: none;
+    min-height: 24px;
+}
+
+.inputElementLeftBarSmall {
+    display: inline;
+    margin: 8px;
+    max-width: 142px;
+    border-radius: 4px;
+    border: none;
+    min-height: 24px;
+}
+
+.whiteSearchBar{
+    border: solid var(--theme-color-lightgray2) 1px;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile: */
+   
+    .sectionBorder {
+        margin-left: 8px;
+        margin-right: 8px;
+        margin-top: 0px;
+        margin-bottom: 8px;
+    }
+    
+    .sectionLabel {
+        margin-top: 4px;
+    }
+
+    .inputElementLeftBarSmall {
+
+    }
+}
