@@ -1,3 +1,6 @@
+University project made in cooperation with another student.
+Web application for a library. 
+
 # Librex
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
