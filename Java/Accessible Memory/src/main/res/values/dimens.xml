@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="custom_wrap_content">-2</integer>
+    <dimen name="buttonHeight">@integer/custom_wrap_content</dimen>
+
+    <dimen name="buttonWidth">284dp</dimen>
+<!--    <dimen name="buttonHeight">58dp</dimen>-->
+    <dimen name="landscapeButtonHeight">48dp</dimen>
+    <dimen name="buttonTextSize">28sp</dimen>
+    <dimen name="rulesTextSize">18sp</dimen>
+    <dimen name="buttonsMargin">5dp</dimen>
+    <dimen name="rulesMargin">15dp</dimen>
+    <dimen name="optionsPadding">60dp</dimen>
+    <dimen name="internalOptionsPadding">54dp</dimen>
+</resources>

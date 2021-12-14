@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Darts Counter</string>
+    <string name="choose_number">Choose number of players</string>
+    <string name="ok_button">OK</string>
+    <string name="players_number">PLAYERS_NUMBER</string>
+    <string name="player_title">Player</string>
+    <string name="next_button"> &gt; </string>
+    <string name="previous_button"> &lt; </string>
+    <string name="empty_score"> - </string>
+</resources>

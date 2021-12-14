@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AccessibleMemory</string>
+    <string name="appTitle">Accessible\nMemory</string>
+    <string name="buttonPlayText">Graj</string>
+    <string name="buttonOptionsText">Opcje</string>
+    <string name="buttonHelpText">Pomoc</string>
+    <string name="buttonVeryEasyText">Bardzo prosty</string>
+    <string name="buttonEasyText">Prosty</string>
+    <string name="buttonMediumText">Średni</string>
+    <string name="buttonHardText">Trudny</string>
+    <string name="buttonProText">Profesjonalny</string>
+    <string name="difficultyLevelsTitle">Wybierz\npoziom\ntrudności</string>
+    <string name="winDialogText">Gratulacje! Chcesz zagrać jeszcze raz?</string>
+    <string name="winDialogPositiveButtonText">Tak</string>
+    <string name="winDialogNegativeButtonText">Nie</string>
+    <string name="soundSwitchText">Dźwięk podczas gry</string>
+    <string name="boardSwitchText">Pokazuj jedną kartę na całym ekranie</string>
+    <string name="vibrationSwitchText">Włącz wibracje</string>
+    <string name="navigationSwitchText">Poruszaj się po planszy przechylając telefon</string>
+    <string name="singleCardModeOptions">Tryb pojedynczej karty na ekranie</string>
+    <string name="backToMenuActionBar">Powrót do menu</string>
+    <string name="backToLevelActionBar">Zmiana trudności</string>
+    <string name="rulesTitleText">Zasady gry</string>
+    <string name="rulesText">Na kartach umieszczone są litery. Gracz odkrywa po 2 karty. Jeśli wybrane karty prezentują tą samą literę, zostają one odkryte do końca gry i są nieaktywne.
+        Jeśli nie są takie same, karty zostają zakryte, a gracz stara się zapamiętać ich pozycje.
+        Karty zasłaniają się automatycznie przy kolejnym odsłonięciu.
+        Celem gry jest odnalezienie wszystkich par w jak najkrótszym czasie i wykonując jak najmniej ruchów. </string>
+    <string name="modesTitleText">Tryby gry</string>
+    <string name="modesMultiText">Widoczne wszystkie karty\n
+        Domyślny tryb gry. Gracz widzi wszystkie karty na ekranie. Odkrycie karty odbywa się poprzez dotknięcie wybranego kartonika.</string>
+    <string name="modesSingleText">Widoczna jedna karta na ekranie\n
+        Gracz widzi jedną kartę na ekranie. Gra zaczyna się w lewym górnym rogu planszy.
+        Możliwe są dwie opcje poruszania się po planszy: poprzez przesuwanie palcem po ekranie (domyślny tryb) lub przechylając telefon (zmiana sposobu poruszania się następuje w panelu opcji).
+    Wyboru karty dokonuje się poprzez dotknięcie ekranu. Jeśli gracz jest na krawędzi planszy i chce wyjść poza nią, informowany jest wibracjami oraz charakterystycznym dźwiękiem (wyłączenie dźwięków i wibracji w panelu opcji).
+    </string>
+    <string name="difficultiesTitleText">Poziomy trudności</string>
+    <string name="difficultiesText">W grze przygotowano 5 poziomów trudności, które oznaczają odpowiednią ilość kart:\n
+    - BARDZO PROSTY: plansza 2x2\n
+    - PROSTY: planasz 2x3\n
+    - ŚREDNI: plansza 2x4\n
+    - TRUDNY: plansza 3x4\n
+    - PROFESJONALNY: plansza 4x5</string>
+
+    <string name="preferenceFileKey">com.example.accessiblememory.PREFERENCE_FILE_KEY</string>
+    <string name="preferenceDifficultyLevel">level</string>
+</resources>

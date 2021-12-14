@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".views.MainActivity">
+
+    <TextView
+        android:id="@+id/appTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:layout_marginBottom="28dp"
+        android:contentDescription="@string/appTitle"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="@string/appTitle"
+        android:textColor="#000000"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/playButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/helpButton"
+        android:layout_width="@dimen/buttonWidth"
+        android:layout_height="@dimen/buttonHeight"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/buttonbordershadow"
+        android:contentDescription="@string/buttonHelpText"
+        android:drawableStart="@android:drawable/ic_menu_help"
+        android:text="@string/buttonHelpText"
+        android:textColor="@color/colorButtonText"
+        android:textSize="@dimen/buttonTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/optionsButton" />
+
+    <Button
+        android:id="@+id/optionsButton"
+        android:layout_width="@dimen/buttonWidth"
+        android:layout_height="@dimen/buttonHeight"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/buttonbordershadow"
+        android:contentDescription="@string/buttonOptionsText"
+        android:drawableStart="@android:drawable/ic_menu_preferences"
+        android:gravity="center"
+        android:text="@string/buttonOptionsText"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/buttonTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playButton" />
+
+    <Button
+        android:id="@+id/playButton"
+        android:layout_width="@dimen/buttonWidth"
+        android:layout_height="@dimen/buttonHeight"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/buttonbordershadow"
+        android:contentDescription="@string/buttonPlayText"
+        android:drawableStart="@android:drawable/ic_media_play"
+        android:gravity="center"
+        android:text="@string/buttonPlayText"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/buttonTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appTitleTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

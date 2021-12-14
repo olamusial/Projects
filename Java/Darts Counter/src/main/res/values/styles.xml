@@ -1,0 +1,29 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.Picker" parent="Theme.AppCompat.Light.NoActionBar" >
+        <item name="android:textColorPrimary">@color/navigationTextColor</item>
+    </style>
+    <dimen name="titleSize">28dp</dimen>
+    <dimen name="scoreSize">38dp</dimen>
+    <dimen name="margin">24dp</dimen>
+    <dimen name="textSize">20dp</dimen>
+    <dimen name="smallMargin">12dp</dimen>
+    <dimen name="bigMargin">40dp</dimen>
+    <dimen name="buttonsMargin">5dp</dimen>
+</resources>
